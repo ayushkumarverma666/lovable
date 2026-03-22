@@ -6,7 +6,7 @@
 
   env:
     REGISTRY: ghcr.io  
-    IMAGE_PREFIX: ghcr.io/nagmani001/lovable
+    IMAGE_PREFIX: ghcr.io/ayushverma001/lovable
 
   jobs:
     changes:

@@ -16,7 +16,7 @@ services:
       retries: 10
 
   backend:
-    image: ghcr.io/nagmani001/lovable/backend:latest
+    image: ghcr.io/ayushverma001/lovable/backend:latest
     container_name: backend-lovable
     restart: always
     ports:
@@ -28,7 +28,7 @@ services:
         condition: service_healthy
 
   web:
-    image: ghcr.io/nagmani001/lovable/web:latest
+    image: ghcr.io/ayushverma001/lovable/web:latest
     container_name: web-lovable
     restart: always
     ports:
