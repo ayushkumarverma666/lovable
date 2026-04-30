@@ -49,8 +49,10 @@ chatRouter.post("/:projectId", async (req: Request, res: Response) => {
     });
 
     const llmMessages = history
-      .filter((h) => h.type === "TEXT_MESSAGE" && !h.hidden)
-      .map((h) => ({
+      .filter(
+        (h: (typeof history)[number]) => h.type === "TEXT_MESSAGE" && !h.hidden,
+      )
+      .map((h: (typeof history)[number]) => ({
         role: h.from === "USER" ? ("user" as const) : ("assistant" as const),
         content: h.contents,
       }));
