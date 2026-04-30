@@ -1,7 +1,6 @@
 import express, { Request, Response } from "express";
 
 import { toNodeHandler } from "better-auth/node";
-import type { Server } from "node:http";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -54,7 +53,7 @@ app.use("/api/v1/chat", chatRouter);
 app.use("/api/v1/sandbox", authMiddleware, sandboxRouter);
 app.use("/api/v1/deploy", authMiddleware, deployRouter);
 
-export let server: Server;
+export let server: ReturnType<typeof app.listen>;
 
 async function main() {
   if (process.env.RESEND_API_KEY) {
